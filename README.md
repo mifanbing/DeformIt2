@@ -8,3 +8,7 @@ Reference         |  Deformed
 Input         |  Output
 :-------------------------:|:-------------------------:
 ![](https://github.com/mifanbing/DeformIt2/blob/main/lbj.png) | ![](https://github.com/mifanbing/DeformIt2/blob/main/output.png)
+
+What I really want to do          |  Result
+:-------------------------:|:-------------------------:
+![](https://github.com/mifanbing/DeformIt2/blob/main/josuke4.webp) | ![](https://github.com/mifanbing/DeformIt2/blob/main/jojo.png)
