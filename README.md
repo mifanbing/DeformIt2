@@ -11,4 +11,4 @@ Input         |  Output
 
 What I really want to do          |  Result
 :-------------------------:|:-------------------------:
-![](https://github.com/mifanbing/DeformIt2/blob/main/josuke4.webp) | ![](https://github.com/mifanbing/DeformIt2/blob/main/jojo.png)
+![](https://github.com/mifanbing/DeformIt2/blob/main/Josuke4.webp) | ![](https://github.com/mifanbing/DeformIt2/blob/main/jojo.png)
