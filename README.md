@@ -1,6 +1,9 @@
 Take the input image, change joint angles and output!
 
-Used the concept of deformer.
+Used the concept of deformer. Deform the upper arm to accomplish the goal of rotation.
+Reference         |  Deformed
+:-------------------------:|:-------------------------:
+![](https://github.com/mifanbing/DeformIt2/blob/main/ref.png) | ![](https://github.com/mifanbing/DeformIt2/blob/main/deform.png)
 
 Input         |  Output
 :-------------------------:|:-------------------------:
