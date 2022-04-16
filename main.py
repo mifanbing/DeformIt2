@@ -25,15 +25,15 @@ bodyContour = util.getBodyContour([poseLines[3], poseLines[5], poseLines[8], pos
 util.drawContour(bodyContour, workImage, dataLoader.inputImageResize)
 # for point in bodyContour:
 #     ww, hh = point
-#     workImage[hh, ww] = (0, 255, 255)
+#     workImage[hh, ww] = (0, 0, 255)
       
 
-rotatedLeftArmContour = util.rotateContour(poseLines[3], inputContourPointsRefine, -math.pi / 6, math.pi / 12, workImage, dataLoader.inputImageResize)
+rotatedLeftArmContour = util.rotateContour(poseLines[3], inputContourPointsRefine, 0, math.pi / 1.5, workImage, dataLoader.inputImageResize)
 # for point in rotatedLeftArmContour:
 #     ww, hh = point
 #     workImage[hh, ww] = (0, 255, 255)
     
-rotatedRightArmContour = util.rotateContour(poseLines[5], inputContourPointsRefine, math.pi / 6, -math.pi / 6, workImage, dataLoader.inputImageResize)
+rotatedRightArmContour = util.rotateContour(poseLines[5], inputContourPointsRefine, math.pi / 6, - math.pi / 1.5, workImage, dataLoader.inputImageResize)
 # for point in rotatedRightArmContour:
 #     ww, hh = point
 #     workImage[hh, ww] = (0, 255, 255)

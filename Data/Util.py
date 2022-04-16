@@ -209,7 +209,6 @@ class Util:
         
         
         #lower part
-        #wRotateLower, hRotateLower = lowerContour[0]
         for point in contourPoints[endPointStartIndex:endPointEndIndex]:
             w, h = point
             wRotate = int((w - w0) * math.cos(angleUpper) - (h - h0) * math.sin(angleUpper) + w0)
@@ -218,14 +217,15 @@ class Util:
             hRotate2 = int((wRotate - wRotateLower) * math.sin(angleLower) + (hRotate - hRotateLower) * math.cos(angleLower) + hRotateLower)
             rotatedContour.append((wRotate2, hRotate2))
             lowerContour.append((wRotate2, hRotate2))
-            
+        lowerContour.append(lowerContour[0])
+        
         lowerContourRefine = []
         for i in range(0, len(lowerContour) - 1):
           for point in self.getInterpolatePoints(lowerContour[i], lowerContour[i+1]):
             lowerContourRefine.append(point)    
         self.drawRotatedContour(lowerContourRefine, workImage, inputImage, -angleUpper, w0, h0, -angleLower, wRotateLower, hRotateLower)
         
-        return rotatedContour
+        return lowerContourRefine
 
     def mapPoint(self, point, controlPointsInput, controlPointsOutput):
         w, h = point
@@ -296,12 +296,13 @@ class Util:
             if w > wMax:
               wMax = w
         for w in range(wMin, wMax):
-          wRotate = int((w - w0) * math.cos(angleUpper) - (h - h0) * math.sin(angleUpper) + w0)
-          hRotate = int((w - w0) * math.sin(angleUpper) + (h - h0) * math.cos(angleUpper) + h0)
-          wRotate2 = int((wRotate - wLower) * math.cos(angleLower) - (hRotate - hLower) * math.sin(angleLower) + wLower)
-          hRotate2 = int((wRotate - wLower) * math.sin(angleLower) + (hRotate - hLower) * math.cos(angleLower) + hLower)
+          
+          wRotate2 = int((w - wLower) * math.cos(angleLower) - (h - hLower) * math.sin(angleLower) + wLower)
+          hRotate2 = int((w - wLower) * math.sin(angleLower) + (h - hLower) * math.cos(angleLower) + hLower)
+          wRotate = int((wRotate2 - w0) * math.cos(angleUpper) - (hRotate2 - h0) * math.sin(angleUpper) + w0)
+          hRotate = int((wRotate2 - w0) * math.sin(angleUpper) + (hRotate2 - h0) * math.cos(angleUpper) + h0)
             
-          workImage[h, w] = inputImage[hRotate2, wRotate2]   
+          workImage[h, w] = inputImage[hRotate, wRotate]   
     
     def drawMappedContour(self, contour, workImage, inputImage, upperContourInput, upperContourOutput):
       hMin = self.inHeight
