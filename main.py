@@ -34,9 +34,9 @@ rotatedLeftArmContour = util.rotateContour(poseLines[3], inputContourPointsRefin
 #     workImage[hh, ww] = (0, 255, 255)
     
 rotatedRightArmContour = util.rotateContour(poseLines[5], inputContourPointsRefine, math.pi / 4, - math.pi / 4, workImage, dataLoader.inputImageResize)
-# for point in rotatedRightArmContour:
-#     ww, hh = point
-#     workImage[hh, ww] = (0, 255, 255)
+for point in rotatedRightArmContour:
+    ww, hh = point
+    workImage[hh, ww] = (0, 0, 255)
     
 rotatedLeftLegContour = util.rotateContour(poseLines[8], inputContourPointsRefine, math.pi / 6, math.pi / 6, workImage, dataLoader.inputImageResize)
 # for point in rotatedLeftLegContour:
