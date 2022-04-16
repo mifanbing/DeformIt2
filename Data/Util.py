@@ -202,6 +202,7 @@ class Util:
         upperContourInput = [contourPoints[startPointStartIndex], contourPoints[startPointEndIndex], contourPoints[endPointStartIndex], contourPoints[endPointEndIndex]]
         upperContourOutput = [contourPoints[startPointStartIndex], contourPoints[startPointEndIndex], (w3, h3), (w2, h2)]
         upperContourRefine = []
+        rotatedContour.append(rotatedContour[0])
         for i in range(0, len(rotatedContour) - 1):
           for point in self.getInterpolatePoints(rotatedContour[i], rotatedContour[i+1]):
             upperContourRefine.append(point) 
@@ -225,7 +226,7 @@ class Util:
             lowerContourRefine.append(point)    
         self.drawRotatedContour(lowerContourRefine, workImage, inputImage, -angleUpper, w0, h0, -angleLower, wRotateLower, hRotateLower)
         
-        return lowerContourRefine
+        return upperContourRefine
 
     def mapPoint(self, point, controlPointsInput, controlPointsOutput):
         w, h = point
