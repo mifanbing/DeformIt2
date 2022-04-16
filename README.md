@@ -1,6 +1,6 @@
-Output 
+Take the input image, change joint angles and output!
 
-
+Used the concept of deformer.
 
 Input         |  Output
 :-------------------------:|:-------------------------:
