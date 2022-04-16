@@ -28,25 +28,25 @@ util.drawContour(bodyContour, workImage, dataLoader.inputImageResize)
 #     workImage[hh, ww] = (0, 0, 255)
       
 
-rotatedLeftArmContour = util.rotateContour(poseLines[3], inputContourPointsRefine, 0, math.pi / 6, workImage, dataLoader.inputImageResize)
+rotatedLeftArmContour = util.rotateContour(poseLines[3], inputContourPointsRefine, 0, math.pi / 1.5, workImage, dataLoader.inputImageResize)
 # for point in rotatedLeftArmContour:
 #     ww, hh = point
 #     workImage[hh, ww] = (0, 255, 255)
     
-rotatedRightArmContour = util.rotateContour(poseLines[5], inputContourPointsRefine, math.pi / 4, - math.pi / 4, workImage, dataLoader.inputImageResize)
-for point in rotatedRightArmContour:
-    ww, hh = point
-    workImage[hh, ww] = (0, 0, 255)
+rotatedRightArmContour = util.rotateContour(poseLines[5], inputContourPointsRefine, math.pi / 4, -math.pi/2.5, workImage, dataLoader.inputImageResize)
+# for point in rotatedRightArmContour:
+#     ww, hh = point
+#     workImage[hh, ww] = (0, 0, 255)
     
-rotatedLeftLegContour = util.rotateContour(poseLines[8], inputContourPointsRefine, math.pi / 6, math.pi / 6, workImage, dataLoader.inputImageResize)
+rotatedLeftLegContour = util.rotateContour(poseLines[8], inputContourPointsRefine, math.pi / 6, -math.pi / 6, workImage, dataLoader.inputImageResize)
 # for point in rotatedLeftLegContour:
 #     ww, hh = point
 #     workImage[hh, ww] = (0, 0, 255)
     
-rotatedRightLegContour = util.rotateContour(poseLines[11], inputContourPointsRefine, math.pi / 6, math.pi / 6, workImage, dataLoader.inputImageResize)
+rotatedRightLegContour = util.rotateContour(poseLines[11], inputContourPointsRefine, -math.pi / 6, -math.pi / 6, workImage, dataLoader.inputImageResize)
 # for point in rotatedRightLegContour:
 #     ww, hh = point
-#     workImage[hh, ww] = (0, 255, 255)    
+#     workImage[hh, ww] = (0, 0, 255)    
 
 cv2.imshow('', workImage)
 cv2.waitKey(0)

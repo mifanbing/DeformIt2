@@ -1,6 +1,5 @@
 import numpy as np
 import math
-import cv2
 from numpy.linalg import inv
 
 class Util:
@@ -131,7 +130,6 @@ class Util:
             intervals.append((rangeStartAndEnd[0][0], rangeStartAndEnd[1][0]))
             cutContours.append(self.getInterpolatePoints(contourPoints[rangeStartAndEnd[0][0]], contourPoints[rangeStartAndEnd[1][0]]))
         
-        
         trimmedBodyContour = []
         hasAddedParts = [False, False, False, False]
         for i in range(len(contourPoints)):
@@ -144,7 +142,7 @@ class Util:
                         trimmedBodyContour.extend(cutContours[j])
             if isBody:
                 trimmedBodyContour.append(contourPoints[i])
-                
+             
         return trimmedBodyContour
 
     def rotateContour(self, poseLine, contourPoints, angleUpper, angleLower, workImage, inputImage):

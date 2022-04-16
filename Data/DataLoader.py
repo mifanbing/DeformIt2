@@ -15,10 +15,10 @@ class DataLoader:
       (0.60,	0.271), # 5: right shoulder
       (0.644,	0.254), # 6: right elbow
       (0.749,	0.14), # 7: right hand
-      (0.442,	0.67), # 8: left waist
+      (0.442,	0.63), # 8: left waist
       (0.436,	0.721), # 9: left knee
       (0.415,	0.933), # 10: left foot
-      (0.520,	0.67), # 11: right waist
+      (0.520,	0.63), # 11: right waist
       (0.525,	0.724), # 12: right knee
       (0.507,	0.933)] # 13: right foot
     
